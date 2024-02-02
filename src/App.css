@@ -1,0 +1,59 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  box-sizing: border-box;
+}
+
+div{
+  border: 2px solid red;
+}
+
+.container{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+}
+
+/********************* Menu *******************************/
+.menu-container{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  min-width: 300px;
+}
+
+.menu-executiveButtons{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+.personalDetails-header{
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+
+}
+
+
+/********************* CV Display *******************************/
+.display-container{
+  flex: 3 3 auto;
+
+  min-width: 500px;
+}
+
+.personalDetails{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+
