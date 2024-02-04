@@ -1,14 +1,21 @@
 #root {
-  max-width: 1280px;
+  max-width: 2000px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-
   box-sizing: border-box;
+
+  --color-lightGray: #ECECEC;
+  --color-offWhite: #F9F9F9;
+  --color-navy: rgb(14, 55, 78);
+
+  background-color: var(--color-lightGray);
 }
 
+
+
 div{
-  border: 2px solid red;
+  /* border: 2px solid rgb(175, 46, 46); */
 }
 
 .container{
@@ -16,6 +23,13 @@ div{
   gap: 10px;
   width: 100%;
   height: 100%;
+
+  background-color: var(--color-lightGray);
+}
+
+button:hover {
+  cursor: pointer;
+  transform:scale(1.05);
 }
 
 /********************* Menu *******************************/
@@ -26,6 +40,12 @@ div{
   gap: 5px;
 
   min-width: 300px;
+}
+
+.addContent-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .menu-executiveButtons{
@@ -42,11 +62,65 @@ div{
 }
 
 
+
+/***************** Shared form style ******************/
+.form-container {
+  padding: 10px;
+  background-color: var(--color-offWhite);
+  border-radius: 5px;
+}
+
+.formHeader h3{
+  font-size: 25px;
+}
+
+.formHeader button {
+  border: none;
+  background-color: var(--color-offWhite);
+  font-size: 25px;
+
+  padding: none;
+  margin: none;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+.form-row label{
+  align-self: self-start;
+
+}
+
+.form-row input {
+  background-color: var(--color-lightGray);
+  border-radius: 5px;
+  border: none;
+
+  font-size: .8em;
+  padding: 5px;
+}
+
+
 /********************* CV Display *******************************/
 .display-container{
   flex: 3 3 auto;
-
   min-width: 500px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-offWhite);
+  
+}
+
+.personalDisplay-container {
+  background-color: var(--color-navy);
+  color: var(--color-offWhite)
 }
 
 .personalDetails{
@@ -54,6 +128,8 @@ div{
   gap: 5px;
   align-items: center;
   justify-content: center;
+
+  
 }
 
 .capitalize {

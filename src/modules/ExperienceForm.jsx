@@ -25,9 +25,9 @@ function ExperienceForm({experienceForm, updateFormData}) {
   }
 
   return (
-    <div className="experience-container">
+    <div className="experience-container form-container">
       <form>
-        <div className="experience-header">
+        <div className="experience-header formHeader">
           <h3>experience</h3>
           <button className="dropdown" onClick={toggleExperienceExpand}>\/</button>
         </div>

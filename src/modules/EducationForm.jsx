@@ -25,9 +25,9 @@ function EducationForm({educationForm, updateFormData}) {
   }
 
   return (
-    <div className="education-container">
+    <div className="education-container form-container">
       <form>
-        <div className="education-header">
+        <div className="education-header formHeader">
           <h3>Education</h3>
           <button className="dropdown" onClick={toggleEducationExpand}>\/</button>
         </div>

@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import FormRow from "./FormRow";
 
 function PersonalForm({personalDetails, updateFormData}) {
-  
   const [personalExpand, setPersonalExpand] = useState(false);
+  const [expandButton, setExpandButton] = useState("˅");
 
   function togglePersonalExpand(e) {
     e.preventDefault()
     setPersonalExpand(!personalExpand);
+    setExpandButton(personalExpand ? '˅': '✕');
   }
 
   const updateThisForm = (newValue, label, index = "") => {
@@ -18,11 +19,11 @@ function PersonalForm({personalDetails, updateFormData}) {
   }
 
   return (
-    <div className="personalDetails-container">
+    <div className="personalDetails-container form-container">
       <form>
-        <div className="personalDetails-header">
+        <div className="personalDetails-header formHeader">
           <h3>Personal Details</h3>
-          <button className="dropdown" onClick={togglePersonalExpand}>\/</button>
+          <button className="dropdown" onClick={togglePersonalExpand}>{expandButton}</button>
         </div>
         {personalExpand && (
           <>
