@@ -1,34 +1,20 @@
 import React, { useState } from "react";
-import PersonalFormRow from "./PersonalFormRow";
+import FormRow from "./FormRow";
 
 function PersonalForm({personalDetails, updateFormData}) {
   
   const [personalExpand, setPersonalExpand] = useState(false);
 
-  // function updateFormData(e) {
-  //   switch(e.target.id){
-  //     case ("personal-fullName"): {
-  //       setPersonalDetails({...personalDetails, fullName: e.target.value});
-  //       break;
-  //     }
-  //     case ("personal-email"):  {
-  //       setPersonalDetails({...personalDetails, email: e.target.value});
-  //       break;
-  //     }
-  //     case ("personal-phone"):  {
-  //       setPersonalDetails({...personalDetails, phone: e.target.value});
-  //       break;
-  //     }
-  //     case ("personal-address"):  {
-  //       setPersonalDetails({...personalDetails, address: e.target.value});
-  //       break;
-  //     }
-  //   } 
-  // }
-
   function togglePersonalExpand(e) {
     e.preventDefault()
     setPersonalExpand(!personalExpand);
+  }
+
+  const updateThisForm = (newValue, label, index = "") => {
+    console.log("entered personal value", newValue);
+    console.log("entered label", label);
+    const labelAndValue = {[label]: newValue};
+    updateFormData('personalForm', labelAndValue);
   }
 
   return (
@@ -40,10 +26,10 @@ function PersonalForm({personalDetails, updateFormData}) {
         </div>
         {personalExpand && (
           <>
-          <PersonalFormRow label="fullName" updateFormData={updateFormData} personalDetails={personalDetails}/>
-          <PersonalFormRow label="email" updateFormData={updateFormData} personalDetails={personalDetails}/>
-          <PersonalFormRow label="phone" updateFormData={updateFormData} personalDetails={personalDetails}/>
-          <PersonalFormRow label="address" updateFormData={updateFormData} personalDetails={personalDetails}/>
+          <FormRow label="full_name" updateThisForm={updateThisForm} details={personalDetails}/>
+          <FormRow label="email" updateThisForm={updateThisForm} details={personalDetails}/>
+          <FormRow label="phone" updateThisForm={updateThisForm} details={personalDetails}/>
+          <FormRow label="address" updateThisForm={updateThisForm} details={personalDetails}/>
           </>
         )}
       </form>

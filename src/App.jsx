@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import PersonalForm from './modules/PersonalForm';
-
-
+import EducationForm from './modules/EducationForm';
+import ExperienceForm from './modules/ExperienceForm';
 
 
 
@@ -11,16 +11,16 @@ function App() {
   //holds all form data
   const [formData, setFormData] = useState({
     personalForm: {
-      fullName: '',
+      full_name: '',
       email: '',
       phone: '',
       address: ''
     },
-    WorkForm: {
+    educationForm: {
       //array to hold multiple work experiences
-      workExperiences: [],
+      educations: [],
     },
-    ExperienceForm: {
+    experienceForm: {
       //array to hold multiple experiences
       experiences: [],
     }
@@ -28,9 +28,12 @@ function App() {
 
   //TODO: make sure this works. difficult to understand
   //it gets passed formType and updateData, but how
+  //formType = 'personalForm'
+  //updatedData = 'fullName: 'bob'' or 'educations: [{experience1}, {experience2}]
   const updateFormData = (formType, updatedData) => {
     console.log(formType);
     console.log(updatedData);
+    console.log(formData.educationForm);
 
     setFormData((prevData) => ({
       ...prevData,
@@ -53,13 +56,15 @@ function App() {
         </div>
         <div className="addContent-container">
           <PersonalForm personalDetails={formData.personalForm} updateFormData={updateFormData} />
+          <EducationForm educationForm={formData.educationForm} updateFormData={updateFormData} />
+          <ExperienceForm experienceForm={formData.experienceForm} updateFormData={updateFormData} />
         </div>
       </div>
 
       <div className="display-container">
         <div className="personalDisplay-container">
           {console.log(formData.personalForm.fullName)}
-          <h1>{formData.personalForm.fullName}</h1>
+          <h1>{formData.personalForm.full_name}</h1>
           <div className="personalDetails">
             <p>{formData.personalForm.email}</p>
             <p>{formData.personalForm.phone}</p>

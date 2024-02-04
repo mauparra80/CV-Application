@@ -56,4 +56,8 @@ div{
   justify-content: center;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 
