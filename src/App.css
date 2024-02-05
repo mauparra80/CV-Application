@@ -13,7 +13,9 @@
 }
 
 *{
-  box-sizing: b;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 div{
@@ -143,15 +145,17 @@ button:hover {
   height: 100%;
   border: 1px solid red;
 
-  background-color: var(--color-offWhite);
+  background-color: white;
 }
 
 .personalDisplay-container {
-  background-color: var(--color-navy);
-  color: var(--color-offWhite);
-
   /* Not sure why this fixes the spacing */
   padding-top: 1px; 
+  padding-bottom: 10px;
+  margin-bottom: 50px;
+
+  background-color: var(--color-navy);
+  color: var(--color-offWhite);
 }
 
 .personalDisplay-container h1{
@@ -165,6 +169,26 @@ button:hover {
   justify-content: center;
 }
 
+.displaySection {
+  margin: 5px 75px 5px 75px;
+}
 
+.section-title {
+  background-color: var(--color-lightGray);
+  margin-bottom: 10px;
+}
+
+.displaySection .sectionDetails {
+  display: flex;
+  gap: 20px;
+  justify-content: start;
+  
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.displaySection .sectionDetails p {
+  min-width: 160px;
+}
 
 

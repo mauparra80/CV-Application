@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import FormRow from "./FormRow";
-import Expand from "./Expand";
 
 function EducationForm({educationForm, updateFormData}) {
   const [educationExpand, setEducationExpand] = useState(false);

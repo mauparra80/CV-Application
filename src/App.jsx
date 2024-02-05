@@ -3,7 +3,7 @@ import './App.css'
 import PersonalForm from './modules/PersonalForm';
 import EducationForm from './modules/EducationForm';
 import ExperienceForm from './modules/ExperienceForm';
-
+import CVDisplay from './modules/CVDisplay';
 
 
 function App() {
@@ -62,9 +62,9 @@ function App() {
       </div>
 
       <div className="display-container">
-        <div className="cv-container">
+        <CVDisplay formData = {formData} />
+        {/* <div className="cv-container">
           <div className="personalDisplay-container">
-            {console.log(formData.personalForm.fullName)}
             <h1>{formData.personalForm.full_name}</h1>
             <div className="personalDetails">
               <p>{formData.personalForm.email}</p>
@@ -72,7 +72,8 @@ function App() {
               <p>{formData.personalForm.address}</p>
             </div>
           </div>
-        </div>
+
+        </div> */}
       </div>
     </div>
   )
