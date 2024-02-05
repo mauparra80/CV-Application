@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import FormRow from "./FormRow";
+import Expand from "./Expand";
 
 function EducationForm({educationForm, updateFormData}) {
   const [educationExpand, setEducationExpand] = useState(false);
+  const [expandButton, setExpandButton] = useState("˅");
 
   function toggleEducationExpand(e) {
     e.preventDefault()
     setEducationExpand(!educationExpand);
+    setExpandButton(educationExpand ? '˅': '✕');
   }
 
   function addEducation(e) {
@@ -29,18 +32,23 @@ function EducationForm({educationForm, updateFormData}) {
       <form>
         <div className="education-header formHeader">
           <h3>Education</h3>
-          <button className="dropdown" onClick={toggleEducationExpand}>\/</button>
+          <button className="dropdown" onClick={toggleEducationExpand}>{expandButton}</button>
         </div>
-        {educationForm.educations.map((education, index) => (
-          <div key={index}>
-            <FormRow label="school" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
-            <FormRow label="degree" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
-            <FormRow label="start_date" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
-            <FormRow label="end_date" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
-            <FormRow label="location" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
-          </div>
-        ))}
-        <button onClick={addEducation}>+ Education</button>
+        {educationExpand && (
+          <>
+          {educationForm.educations.map((education, index) => (
+            <div key={index}>
+              <FormRow label="school" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
+              <FormRow label="degree" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
+              <FormRow label="start_date" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
+              <FormRow label="end_date" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
+              <FormRow label="location" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
+            </div>
+          ))}
+          <button onClick={addEducation}>+ Education</button>
+          </>
+        )}
+        
       </form>
     </div>
   );

@@ -62,13 +62,15 @@ function App() {
       </div>
 
       <div className="display-container">
-        <div className="personalDisplay-container">
-          {console.log(formData.personalForm.fullName)}
-          <h1>{formData.personalForm.full_name}</h1>
-          <div className="personalDetails">
-            <p>{formData.personalForm.email}</p>
-            <p>{formData.personalForm.phone}</p>
-            <p>{formData.personalForm.address}</p>
+        <div className="cv-container">
+          <div className="personalDisplay-container">
+            {console.log(formData.personalForm.fullName)}
+            <h1>{formData.personalForm.full_name}</h1>
+            <div className="personalDetails">
+              <p>{formData.personalForm.email}</p>
+              <p>{formData.personalForm.phone}</p>
+              <p>{formData.personalForm.address}</p>
+            </div>
           </div>
         </div>
       </div>

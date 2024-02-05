@@ -3,10 +3,12 @@ import FormRow from "./FormRow";
 
 function ExperienceForm({experienceForm, updateFormData}) {
   const [experienceExpand, setExperienceExpand] = useState(false);
+  const [expandButton, setExpandButton] = useState("˅");
 
   function toggleExperienceExpand(e) {
     e.preventDefault()
     setExperienceExpand(!experienceExpand);
+    setExpandButton(experienceExpand ? '˅': '✕');
   }
 
   function addExperience(e) {
@@ -29,19 +31,25 @@ function ExperienceForm({experienceForm, updateFormData}) {
       <form>
         <div className="experience-header formHeader">
           <h3>experience</h3>
-          <button className="dropdown" onClick={toggleExperienceExpand}>\/</button>
+          <button className="dropdown" onClick={toggleExperienceExpand}>{expandButton}</button>
         </div>
-        {experienceForm.experiences.map((experience, index) => (
-          <div key={index}>
-            <FormRow label="company_name" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
-            <FormRow label="position_title" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
-            <FormRow label="start_date" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
-            <FormRow label="end_date" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
-            <FormRow label="location" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
-            <FormRow label="description" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
-          </div>
-        ))}
-        <button onClick={addExperience}>+ experience</button>
+        {experienceExpand && (
+          <>
+          {experienceForm.experiences.map((experience, index) => (
+            <div key={index}>
+              <FormRow label="company_name" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
+              <FormRow label="position_title" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
+              <FormRow label="start_date" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
+              <FormRow label="end_date" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
+              <FormRow label="location" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
+              <FormRow label="description" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
+            </div>
+          ))}
+          <button onClick={addExperience}>+ experience</button>
+          </>
+        )}
+        
+        
       </form>
     </div>
   );
