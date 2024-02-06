@@ -24,11 +24,12 @@ div{
 
 .container{
   display: flex;
-  gap: 10px;
+  gap: 30px;
   /* width: 100vw;
   height: 100vh; */
   min-height: 100vh;
   max-width: 2000px;
+  justify-content: center;
 
   background-color: var(--color-lightGray);
 }
@@ -45,7 +46,10 @@ button:hover {
   flex-direction: column;
   gap: 5px;
 
-  min-width: 400px;
+  overflow: auto;
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 100vh;
 }
 
 .addContent-container {
@@ -142,6 +146,15 @@ button:hover {
   padding: 5px;
 }
 
+#description{
+  height: 100px;
+  text-wrap: wrap;
+  resize: none;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: var(--color-lightGray);
+}
+
 .addSectionBtn {
   padding: 15px 40px 15px 40px;
   margin: 10px;
@@ -175,17 +188,22 @@ button:hover {
 }
 
 
+
 /********************* CV Display *******************************/
 .display-container{
-  flex: 3 3 auto;
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   align-items: start;
 
+  /* set to standard cv letter size 1'' = 100px */
+  width: 850px;
+  height: 1100px;
+
   position: relative;
-  width: 100%;
-  min-width: 850px;
-  padding-top: 129.4118%; /* (11 / 8.5) * 100% */
+  /* width: 100%; */
+  /* min-width: 850px;
+  padding-top: 129.4118%; (11 / 8.5) * 100% */
   
 }
 
