@@ -29,9 +29,9 @@ function ExperienceForm({experienceForm, updateFormData}) {
   return (
     <div className="experience-container form-container">
       <form>
-        <div className="experience-header formHeader">
+        <div className="experience-header formHeader" onClick={toggleExperienceExpand}>
           <h3>experience</h3>
-          <button className="dropdown" onClick={toggleExperienceExpand}>{expandButton}</button>
+          <button className="dropdown" >{expandButton}</button>
         </div>
         {experienceExpand && (
           <>
@@ -45,7 +45,7 @@ function ExperienceForm({experienceForm, updateFormData}) {
               <FormRow label="description" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
             </div>
           ))}
-          <button onClick={addExperience}>+ experience</button>
+          <button className="addSectionBtn" onClick={addExperience}>+ experience</button>
           </>
         )}
         

@@ -29,9 +29,9 @@ function EducationForm({educationForm, updateFormData}) {
   return (
     <div className="education-container form-container">
       <form>
-        <div className="education-header formHeader">
+        <div className="education-header formHeader" onClick={toggleEducationExpand}>
           <h3>Education</h3>
-          <button className="dropdown" onClick={toggleEducationExpand}>{expandButton}</button>
+          <button className="dropdown" >{expandButton}</button>
         </div>
         {educationExpand && (
           <>
@@ -44,7 +44,7 @@ function EducationForm({educationForm, updateFormData}) {
               <FormRow label="location" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
             </div>
           ))}
-          <button onClick={addEducation}>+ Education</button>
+          <button className="addSectionBtn" onClick={addEducation}>+ Education</button>
           </>
         )}
         

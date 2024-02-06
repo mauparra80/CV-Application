@@ -21,9 +21,9 @@ function PersonalForm({personalDetails, updateFormData}) {
   return (
     <div className="personalDetails-container form-container">
       <form>
-        <div className="personalDetails-header formHeader">
+        <div className="personalDetails-header formHeader" onClick={togglePersonalExpand}>
           <h3>Personal Details</h3>
-          <button className="dropdown" onClick={togglePersonalExpand}>{expandButton}</button>
+          <button className="dropdown" >{expandButton}</button>
         </div>
         {personalExpand && (
           <>

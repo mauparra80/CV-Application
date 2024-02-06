@@ -6,6 +6,15 @@ import ExperienceForm from './modules/ExperienceForm';
 import CVDisplay from './modules/CVDisplay';
 
 
+/*TODO:
+Make the left section scroll and the right section max height
+Load example function
+clear cv function
+add spaces between form subsections
+add remove eductaiton or experience button to delete specific parts
+add browser memory
+-when done, try to export to pdf somehow.  */
+
 function App() {
   
   //holds all form data
@@ -51,7 +60,7 @@ function App() {
     <div className="container">
       <div className="menu-container">
         <div className="menu-executiveButtons">
-          <button className="clearFormBtn">Cear Resume</button>
+          <button className="clearFormBtn">Clear CV</button>
           <button className="loadExampleBtn">Load Example</button>
         </div>
         <div className="addContent-container">
