@@ -16,6 +16,7 @@ function DisplayExperience ({index, experience}) {
       <div>
         <p><b>{experience.company_name}</b></p>
         <p>{experience.position_title}</p>
+        <p>{experience.description}</p>
       </div>
     </div>
   )

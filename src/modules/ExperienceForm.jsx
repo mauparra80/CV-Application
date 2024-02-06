@@ -18,6 +18,13 @@ function ExperienceForm({experienceForm, updateFormData}) {
     });
   }
 
+  function removeExperience(e, index) {
+    e.preventDefault();
+    const updatedExperiences = [...experienceForm.experiences];
+    updatedExperiences.splice(index, 1); //extract index section
+    updateFormData('experienceForm', {experiences: updatedExperiences});
+  }
+
   //compiles data for this formtype and calls update state
   const updateThisForm = (newValue, label, index) => {
     const correctedNewValue = {[label]: newValue};
@@ -36,7 +43,16 @@ function ExperienceForm({experienceForm, updateFormData}) {
         {experienceExpand && (
           <>
           {experienceForm.experiences.map((experience, index) => (
-            <div key={index}>
+            <div key={index} className="form-section">
+              {experienceForm.experiences.length>1 && (
+                <>
+                <hr></hr>
+                <div className="formSection-divider">
+                  <p><b>Experience {index+1}</b></p>
+                  <button className="deleteSectionBtn" onClick={(e) => removeExperience(e, index)}>Delete Section</button>
+                </div>
+                </>
+              )}
               <FormRow label="company_name" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
               <FormRow label="position_title" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>
               <FormRow label="start_date" updateThisForm={updateThisForm} details={experienceForm.experiences[index]} index={index}/>

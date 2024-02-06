@@ -18,6 +18,13 @@ function EducationForm({educationForm, updateFormData}) {
     });
   }
 
+  function removeEducation(e, index) {
+    e.preventDefault();
+    const updatedEducations = [...educationForm.educations];
+    updatedEducations.splice(index, 1); //extract index section
+    updateFormData('educationForm', {educations: updatedEducations});
+  }
+
   //compiles data for this formtype and calls update state
   const updateThisForm = (newValue, label, index) => {
     const correctedNewValue = {[label]: newValue};
@@ -25,6 +32,7 @@ function EducationForm({educationForm, updateFormData}) {
     updatedEducations[index] = { ...updatedEducations[index], ...correctedNewValue };
     updateFormData('educationForm', { educations: updatedEducations });
   }
+
 
   return (
     <div className="education-container form-container">
@@ -36,7 +44,16 @@ function EducationForm({educationForm, updateFormData}) {
         {educationExpand && (
           <>
           {educationForm.educations.map((education, index) => (
-            <div key={index}>
+            <div key={index} className="form-section">
+              {educationForm.educations.length>1 && (
+                <>
+                <hr></hr>
+                <div className="formSection-divider">
+                  <p><b>Education {index+1}</b></p>
+                  <button className="deleteSectionBtn" onClick={(e) => removeEducation(e, index)}>Delete Section</button>
+                </div>
+                </>
+              )}
               <FormRow label="school" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
               <FormRow label="degree" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>
               <FormRow label="start_date" updateThisForm={updateThisForm} details={educationForm.educations[index]} index={index}/>

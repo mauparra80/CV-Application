@@ -4,16 +4,18 @@ import PersonalForm from './modules/PersonalForm';
 import EducationForm from './modules/EducationForm';
 import ExperienceForm from './modules/ExperienceForm';
 import CVDisplay from './modules/CVDisplay';
+import LoadExample from './modules/LoadExample';
+import ClearCV from './modules/ClearCV';
 
 
 /*TODO:
 Make the left section scroll and the right section max height
 Load example function
 clear cv function
-add spaces between form subsections
-add remove eductaiton or experience button to delete specific parts
 add browser memory
 -when done, try to export to pdf somehow.  */
+
+
 
 function App() {
   
@@ -34,6 +36,7 @@ function App() {
       experiences: [],
     }
   });
+
 
   //TODO: make sure this works. difficult to understand
   //it gets passed formType and updateData, but how
@@ -60,8 +63,8 @@ function App() {
     <div className="container">
       <div className="menu-container">
         <div className="menu-executiveButtons">
-          <button className="clearFormBtn">Clear CV</button>
-          <button className="loadExampleBtn">Load Example</button>
+          <button className="clearFormBtn" onClick={() => ClearCV(setFormData)}>Clear CV</button>
+          <button className="loadExampleBtn" onClick={() => LoadExample(setFormData)}>Load Example</button>
         </div>
         <div className="addContent-container">
           <PersonalForm personalDetails={formData.personalForm} updateFormData={updateFormData} />
