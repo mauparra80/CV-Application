@@ -1,9 +1,11 @@
 import DisplayEducation from "./DisplayEducation";
 import DisplayExperience from "./DisplayExperiences";
+import DisplayQualifications from "./DisplayQualifications";
 
 function CVDisplay({formData}) {
   const educations = formData.educationForm.educations;
-  const experiences = formData.experienceForm.experiences
+  const experiences = formData.experienceForm.experiences;
+  const qualifications = formData.qualificationForm.qualifications;
 
   return (
     
@@ -33,6 +35,18 @@ function CVDisplay({formData}) {
             <h3 className="section-title">Professional Experience</h3>
             {experiences.map((experience, index) => (
               <DisplayExperience index={index} experience={experience} key={index}/>
+            ))}
+          </>
+        )}
+      </div>
+
+      <div className="qualificationDisplay-container displaySection">
+      {qualifications.length>0 && (
+
+          <>
+            <h3 className="section-title">Qualifications</h3>
+            {qualifications.map((qualification, index) => (
+              <DisplayQualifications index={index} qualification={qualification} key={index}/>
             ))}
           </>
         )}

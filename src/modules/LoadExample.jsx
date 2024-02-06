@@ -45,6 +45,14 @@ function LoadExample(setFormData) {
           description: '-taught 200 students both remote and in person and participated in creation of new course material. head coached the volleyball team, and assisted with math tutoring.'
         }
       ],
+    },
+    qualificationForm: {
+      qualifications: [
+        {
+          topic: 'Technical Profeciency',
+          description: 'HTML, CSS, JavaScript, React.js'
+        }
+      ]
     }
   }
 

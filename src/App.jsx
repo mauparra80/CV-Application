@@ -6,12 +6,12 @@ import ExperienceForm from './modules/ExperienceForm';
 import CVDisplay from './modules/CVDisplay';
 import LoadExample from './modules/LoadExample';
 import ClearCV from './modules/ClearCV';
+import QualificationForm from './modules/QualificationForm';
 
 
 /*TODO:
-Make the left section scroll and the right section max height
-Load example function
-clear cv function
+Add "Qualifications" "section 
+add github link to personal details
 add browser memory
 -when done, try to export to pdf somehow.  */
 
@@ -34,6 +34,9 @@ function App() {
     experienceForm: {
       //array to hold multiple experiences
       experiences: [],
+    },
+    qualificationForm: {
+      qualifications: [],
     }
   });
 
@@ -70,6 +73,7 @@ function App() {
           <PersonalForm personalDetails={formData.personalForm} updateFormData={updateFormData} />
           <EducationForm educationForm={formData.educationForm} updateFormData={updateFormData} />
           <ExperienceForm experienceForm={formData.experienceForm} updateFormData={updateFormData} />
+          <QualificationForm qualificationForm={formData.qualificationForm} updateFormData={updateFormData} />
         </div>
       </div>
 
