@@ -29,6 +29,7 @@ div{
   height: 100vh; */
   min-height: 100vh;
   max-width: 2000px;
+  min-width: 1130px;
   justify-content: center;
 
   background-color: var(--color-lightGray);
@@ -66,7 +67,7 @@ button:hover {
   background-color: var(--color-offWhite);
 }
 
-.menu-executiveButtons button{
+.btn{
   flex: 1;
   padding: 10px 20px 10px 20px;
   margin: 5px;
@@ -74,6 +75,10 @@ button:hover {
   font-weight: 700;
   border-radius: 5px;
   border: none;
+}
+.downloadBtn {
+  padding: 10px 20px 10px 20px;
+  height: 80%;
 }
 
 .clearFormBtn {
@@ -200,7 +205,7 @@ button:hover {
   width: 850px;
   height: 1100px;
 
-  position: relative;
+  
   /* width: 100%; */
   /* min-width: 850px;
   padding-top: 129.4118%; (11 / 8.5) * 100% */
@@ -208,20 +213,18 @@ button:hover {
 }
 
 .cv-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid red;
+  width: 850px;
+  height: 1100px;
+  
+  /* height: 100vh; */
 
   background-color: white;
 }
 
 .personalDisplay-container {
   /* Not sure why this fixes the spacing */
-  padding-top: 1px; 
-  padding-bottom: 10px;
+  padding-top: 20px; 
+  padding-bottom: 30px;
   margin-bottom: 50px;
 
   background-color: var(--color-navy);
@@ -265,4 +268,11 @@ button:hover {
   margin-bottom: 10px;
 }
 
+.hide{
+  display: none;
+}
+
+.testclass{
+  color: red;
+}
 

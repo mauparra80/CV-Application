@@ -7,6 +7,7 @@ import CVDisplay from './modules/CVDisplay';
 import LoadExample from './modules/LoadExample';
 import ClearCV from './modules/ClearCV';
 import QualificationForm from './modules/QualificationForm';
+import DivToPDF from './modules/DivToPDF';
 
 
 /*TODO:
@@ -73,8 +74,10 @@ function App() {
     <div className="container">
       <div className="menu-container">
         <div className="menu-executiveButtons">
-          <button className="clearFormBtn" onClick={() => ClearCV(setFormData)}>Clear CV</button>
-          <button className="loadExampleBtn" onClick={() => LoadExample(setFormData)}>Load Example</button>
+          <button className="clearFormBtn btn" onClick={() => ClearCV(setFormData)}>Clear CV</button>
+          <button className="loadExampleBtn btn" onClick={() => LoadExample(setFormData)}>Load Example</button>
+          {/* this should only be a button, not another CVDisplay */}
+          <DivToPDF contentToConvert={() => <CVDisplay formData={formData}/>} fileName="my_cv.pdf" />
         </div>
         <div className="addContent-container">
           <PersonalForm personalDetails={formData.personalForm} updateFormData={updateFormData} />
@@ -86,17 +89,6 @@ function App() {
 
       <div className="display-container">
         <CVDisplay formData = {formData} />
-        {/* <div className="cv-container">
-          <div className="personalDisplay-container">
-            <h1>{formData.personalForm.full_name}</h1>
-            <div className="personalDetails">
-              <p>{formData.personalForm.email}</p>
-              <p>{formData.personalForm.phone}</p>
-              <p>{formData.personalForm.address}</p>
-            </div>
-          </div>
-
-        </div> */}
       </div>
     </div>
   )

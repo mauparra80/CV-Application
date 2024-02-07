@@ -11,13 +11,14 @@ function CVDisplay({formData}) {
   return (
     
     <div className="cv-container">
+      
       <div className="personalDisplay-container">
         <h1>{formData.personalForm.full_name}</h1>
         <div className="personalDetails">
           <p>{formData.personalForm.email}</p>
           <p>{formData.personalForm.phone}</p>
           <p>{formData.personalForm.address}</p>
-          <a href={formData.personalForm.link} target="_blank" rel="noreferrer">{formData.personalForm.link}</a>
+          <p><a href={formData.personalForm.link} target="_blank" rel="noreferrer">{formData.personalForm.link}</a></p>
         </div>
       </div>
       <div className="educationDisplay-container displaySection">
