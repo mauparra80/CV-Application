@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import PersonalForm from './modules/PersonalForm';
 import EducationForm from './modules/EducationForm';
@@ -10,7 +10,6 @@ import QualificationForm from './modules/QualificationForm';
 
 
 /*TODO:
-Add "Qualifications" "section 
 add github link to personal details
 add browser memory
 -when done, try to export to pdf somehow.  */
@@ -18,14 +17,15 @@ add browser memory
 
 
 function App() {
-  
-  //holds all form data
-  const [formData, setFormData] = useState({
+  const storedData = JSON.parse(localStorage.getItem('data'));
+
+  const templateData = {
     personalForm: {
       full_name: '',
       email: '',
       phone: '',
-      address: ''
+      address: '',
+      link: ''
     },
     educationForm: {
       //array to hold multiple work experiences
@@ -38,7 +38,14 @@ function App() {
     qualificationForm: {
       qualifications: [],
     }
-  });
+  };
+  
+  //holds all form data
+  const [formData, setFormData] = useState(storedData ? storedData : templateData);
+
+  useEffect(() => {
+    localStorage.setItem('data', JSON.stringify(formData));
+  }, [formData])
 
 
   //TODO: make sure this works. difficult to understand

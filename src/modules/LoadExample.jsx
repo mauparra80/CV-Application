@@ -5,7 +5,8 @@ function LoadExample(setFormData) {
       full_name: 'Mauricio Parra',
       email: 'mauparra80@hotmail.com',
       phone: '713-876-2160',
-      address: 'Houston, Texas'
+      address: 'Houston, Texas',
+      link: 'https://github.com/mauparra80'
     },
     educationForm: {
       //array to hold multiple educations

@@ -5,6 +5,7 @@ import DisplayQualifications from "./DisplayQualifications";
 function CVDisplay({formData}) {
   const educations = formData.educationForm.educations;
   const experiences = formData.experienceForm.experiences;
+  console.log(formData);
   const qualifications = formData.qualificationForm.qualifications;
 
   return (
@@ -16,6 +17,7 @@ function CVDisplay({formData}) {
           <p>{formData.personalForm.email}</p>
           <p>{formData.personalForm.phone}</p>
           <p>{formData.personalForm.address}</p>
+          <a href={formData.personalForm.link} target="_blank" rel="noreferrer">{formData.personalForm.link}</a>
         </div>
       </div>
       <div className="educationDisplay-container displaySection">

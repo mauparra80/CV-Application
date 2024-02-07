@@ -31,7 +31,9 @@ function PersonalForm({personalDetails, updateFormData}) {
           <FormRow label="email" updateThisForm={updateThisForm} details={personalDetails}/>
           <FormRow label="phone" updateThisForm={updateThisForm} details={personalDetails}/>
           <FormRow label="address" updateThisForm={updateThisForm} details={personalDetails}/>
+          <FormRow label="link" updateThisForm={updateThisForm} details={personalDetails}/>
           </>
+          
         )}
       </form>
     </div>

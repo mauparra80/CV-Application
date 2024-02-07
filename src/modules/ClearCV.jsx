@@ -13,6 +13,9 @@ function ClearCV (setFormData) {
     experienceForm: {
       //array to hold multiple experiences
       experiences: [],
+    },
+    qualificationForm: {
+      qualifications: [],
     }
   }
   setFormData(clearedForm);
