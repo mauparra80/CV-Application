@@ -2,11 +2,11 @@
 function LoadExample(setFormData) {
   const templateFormData = {
     personalForm: {
-      full_name: 'Mauricio Parra',
-      email: 'mauparra80@hotmail.com',
-      phone: '713-876-2160',
+      full_name: 'John Smith',
+      email: 'JohnSmith80@hotmail.com',
+      phone: '123-456-7890',
       address: 'Houston, Texas',
-      link: 'https://github.com/mauparra80'
+      link: ''
     },
     educationForm: {
       //array to hold multiple educations
