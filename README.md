@@ -1,11 +1,39 @@
-# React + Vite
+<table>
+<tr>
+<td>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# CV-Application Creator
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A resume generator that converts prompts into a minimalist resume. Can also download a PDF of your created resume (but its only an img, non mutable text).
 
 
-site link - https://papaya-dango-370a80.netlify.app/
+</td>
+<td align="right">
+
+[![Live Preview](./livePreview.png)](https://resumebuildermpb.netlify.app/)
+
+</td>
+</tr>
+</table>
+
+
+## Skills, Techniques, and methods practiced.
+
+- Getting comfortable with React / Vite
+- css
+- State managment
+
+### Struggled on
+
+- div to pdf kept exporting at a incorrect size
+
+### Learned
+
+- how to use div to pdf
+- learned to manage states in react
+
+### [Live Preview](https://resumebuildermpb.netlify.app/)
+
+
+
+
